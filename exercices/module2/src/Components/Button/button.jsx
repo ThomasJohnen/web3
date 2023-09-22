@@ -1,7 +1,7 @@
 const Button = ({ changeCount, text, delta }) => {
 
 const handleClick = (event) => {
-    const delta = ParseInt(event.target.dataset.delta)
+    const delta = parseInt(event.target.dataset.delta)
     changeCount(delta)
 }
 
