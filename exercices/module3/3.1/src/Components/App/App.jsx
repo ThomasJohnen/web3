@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import './App.css'
 
-import Button from './Components/Button/button.jsx'
-import Statistics from './Components/Statistics/statistics.jsx'
-
+import Button from '../Button/Button.jsx'
+import Statistics from '../Statistics/Statistics.jsx'
+import Loading from '../Loading/loading.jsx'
 
 
 function App() {
@@ -13,6 +13,16 @@ function App() {
   const [all, setAll] = useState(0)
   const [average, setAverage] = useState(0)
   const [positive, setPositive] = useState(0)
+
+  const [loading, setLoading] = useState(true)
+
+  setTimeout(() => {setLoading(false)}, 3000)
+
+  if(loading) {
+    return (
+      <Loading />
+    )
+  }
 
 
 const handleBadClick = () => {
