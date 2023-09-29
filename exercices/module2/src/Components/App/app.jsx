@@ -6,7 +6,6 @@ const App = () => {
 
     const [counter, setCounter] = useState(JSON.parse(localStorage.getItem("counter")) || 0)
   
-    console.log('rendering with counter value', counter)
 
     const changeCount = (delta) => {
         if(delta === 0){
