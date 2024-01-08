@@ -1,0 +1,29 @@
+@hostname = localhost
+@port = 3001
+@host = http://{{hostname}}:{{port}}
+
+###
+
+POST {{host}}/api/jokes HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "question": "What do you call a cow with no legs? Ground beef!",
+    "answer": "I know, I know, it's a bad joke.",
+    "category": "animal"
+}
+
+###
+
+GET {{host}}/api/jokes HTTP/1.1
+Accept: application/json
+
+###
+
+GET {{host}}/api/jokes/6461f476d9a9da9dbeade34e HTTP/1.1
+
+
+###
+
+DELETE {{host}}/api/jokes/6461f476d9a9da9dbeade34e HTTP/1.1

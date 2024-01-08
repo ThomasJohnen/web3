@@ -1,0 +1,40 @@
+
+@hostname = localhost
+@port = 3001
+@host = http://{{hostname}}:{{port}}
+
+###
+
+POST {{host}}/api/events HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "date": "2022-01-20T12:10:00.000+00:00",
+  "child": "63c841f9348b86481e3662bb",
+  "name": "Début de la sieste"
+}
+
+###
+
+POST {{host}}/api/events HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "date": "2022-01-20T12:10:00.000+00:00",
+  "child": "63c841ea348b86481e365145",
+  "name": "Début de la sieste"
+}
+
+###
+
+POST {{host}}/api/children HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "",
+  "birthDate": "2021-03-27T10:27:15.187+00:00",
+  "gender": "M"
+}
